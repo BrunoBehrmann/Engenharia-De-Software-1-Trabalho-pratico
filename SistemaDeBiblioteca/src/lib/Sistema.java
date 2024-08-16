@@ -18,7 +18,7 @@ public class Sistema {
 	
 	public void executarComando(String comandoString, ParametrosEntrada parametros) {
 		// encherga a string passada como comando
-		Comando comando = comandos.get(comandoString);
+		Comando comando = this.comandos.get(comandoString);
 		comando.executar(parametros);
 	}
 }
