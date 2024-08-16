@@ -10,6 +10,6 @@ public class EmprestarComando implements Comando {
 		Usuario usuario = repositorio.buscaUsuarioPorCodigo(codigoUsuario);
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 		
-		
+		//usuario.ad
 	}
 }
