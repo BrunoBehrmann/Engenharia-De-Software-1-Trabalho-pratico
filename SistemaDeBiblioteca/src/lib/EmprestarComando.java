@@ -2,11 +2,16 @@ package lib;
 
 public class EmprestarComando implements Comando {
 	
+	@Override
 	public void executar(ParametrosEntrada parametros) {
 		String codigoUsuario = parametros.getCodigo1();
-		Reposistorio repositorio = repositorio.getInstancia();
-		Repositorio
-		Usuario usuario = repositorio.buscaUsuarioPorCodigo(CodigoUsuario);
-		Livro livro
+		String codigoLivro = parametros.getCodigo2();
+		Repositorio repositorio = Repositorio.getInstancia();
+		Repositorio rep = Repositorio.getInstancia();
+		Usuario usuario = repositorio.buscaUsuarioPorCodigo(codigoUsuario);
+		Livro livro = rep.buscaLivroPorCodigo(codigoLivro);
+		
+		
+		//
 	}
 }

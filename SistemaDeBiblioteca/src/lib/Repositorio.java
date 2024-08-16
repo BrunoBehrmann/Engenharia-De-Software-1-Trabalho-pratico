@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Repositorio {
 	
-	private List<Ususario> usuarios;
+	private List<Usuario> usuarios;
 	private List<Livro> livros;
 	private static Repositorio instancia;
 	//construtor
@@ -20,11 +20,14 @@ public class Repositorio {
 		return instancia;
 	}
 	
-	public Usuario usuario() {
-		return 
+	public Usuario buscaUsuarioPorCodigo(String codigoUsuario) {
+		return null;
+		
 	}
 	
-	public Livro buscalivroporcodigo(String codigoLivro) {
-		}
+	public Livro buscaLivroPorCodigo(String codigoLivro) {
+		return null;
 	}
+	
+	
 }

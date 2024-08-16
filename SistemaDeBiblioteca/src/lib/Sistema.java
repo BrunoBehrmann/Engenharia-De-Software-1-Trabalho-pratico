@@ -4,21 +4,21 @@ import java.util.HashMap;
 
 public class Sistema {
 
-	private HashMap<String, Comando> comandos = new HasMAps<String, Comandp>();
+	private HashMap<String, Comando> comandos = new HashMap<String, Comando>();
 	
 	public Sistema() {
 		this.initComandos();
 	}
 	
 	private void initComandos() {
-		comandos.put("emp", new EmorestarComando());
+		comandos.put("emp", new EmprestarComando());
 		comandos.put("dev", new DevolverComando());
-		comandos.put("liv", new consultarLivroComando());
+		comandos.put("liv", new ConsultarLivroComando());
 	}
 	
-	public void executarComando(String comandoStrin, ParametrosEntrada parametros) {
+	public void executarComando(String comandoString, ParametrosEntrada parametros) {
 		// encherga a string passada como comando
-		Comando comando = new comandos.get(comandoString);
-		Comando.executar
+		Comando comando = comandos.get(comandoString);
+		comando.executar(parametros);
 	}
 }
