@@ -1,14 +1,14 @@
 package lib;
 
 public class ParametrosEntrada {
-	private String codigo1;
-	private String codigo2;
+	private int codigo1;
+	private int codigo2;
 	
-	public String getCodigo1() {
+	public int getCodigo1() {
 		return codigo1;
 	}
 
-	public String getCodigo2() {
+	public int getCodigo2() {
 		return codigo2;
 	}
 	

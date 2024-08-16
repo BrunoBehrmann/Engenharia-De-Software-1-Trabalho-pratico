@@ -10,7 +10,6 @@ public class Repositorio {
 	private static Repositorio instancia;
 	//construtor
 	private Repositorio() {
-		
 	}
 	
 	public static Repositorio getInstancia() {
@@ -20,12 +19,25 @@ public class Repositorio {
 		return instancia;
 	}
 	
-	public Usuario buscaUsuarioPorCodigo(String codigoUsuario) {
+	public Usuario buscaUsuarioPorCodigo(int codigoUsuario) {
+		for (Usuario usuarioLista: usuarios) {
+			if (usuarioLista.getId() == codigoUsuario) {
+				return usuarioLista;
+			}
+		}
+		System.out.println("Usuario nao encontrado");
 		return null;
 		
 	}
 	
-	public Livro buscaLivroPorCodigo(String codigoLivro) {
+	public Livro buscaLivroPorCodigo(int codigoLivro) {
+		for (Livro livroLista: livros) {
+			if (livroLista.getCodigo() == codigoLivro) {
+				System.out.println();
+				return livroLista;
+			}
+		}
+		System.out.println("Livro nao encontrado");
 		return null;
 	}
 	
