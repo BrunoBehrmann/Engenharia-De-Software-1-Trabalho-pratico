@@ -1,4 +1,9 @@
-package lib;
+package lib.command;
+
+import lib.Livro;
+import lib.ParametrosEntrada;
+import lib.Repositorio;
+import lib.Usuario;
 
 public class EmprestarComando implements Comando {
 	
@@ -11,5 +16,6 @@ public class EmprestarComando implements Comando {
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 		
 		//usuario.ad
+		// implementar aqui emprestar
 	}
 }

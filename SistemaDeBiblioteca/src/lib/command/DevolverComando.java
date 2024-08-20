@@ -1,4 +1,8 @@
-package lib;
+package lib.command;
+
+import lib.Livro;
+import lib.ParametrosEntrada;
+import lib.Repositorio;
 
 public class DevolverComando implements Comando {
 
@@ -8,7 +12,7 @@ public class DevolverComando implements Comando {
 		Repositorio repositorio = Repositorio.getInstancia();
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 		
-		
+		// implementar aqui acao de devolver
 	}
 
 }

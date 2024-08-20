@@ -1,16 +1,14 @@
 //Singleton
 package lib;
 
-import java.util.Scanner;
-
 public class Console {
 	private static Console instance;
     private Sistema sistema;
-    private Scanner scanner;
+    private Entrada entrada;
 
     private Console() {
-        sistema = new Sistema();
-        scanner = new Scanner(System.in);
+    	sistema = new Sistema();
+    	entrada = new Entrada();
     }
 
     public static Console getInstance() {
@@ -22,11 +20,9 @@ public class Console {
     
     public void run() {
     	
-        String comando;
         while (true) {
         System.out.print("> ");
-            comando = scanner.nextLine().trim();
-            sistema.executarComando(comando, null);
+            sistema.executarComando(entrada.pegaComandoDaEntrada(), entrada.pegaParamentrosDaEntrada());
         }
     }
 }

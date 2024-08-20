@@ -1,3 +1,7 @@
+package lib;
+
+import java.util.List;
+
 public class Sujeito {
   private List<Observador> observadores;
   
@@ -8,7 +12,7 @@ public class Sujeito {
   public void removerObservador(Observador observador) {
     observadores.remove(observador);
   }
-
+/*
   public void notificarObservador(Observador observador) {
     Iterator i = observadores.iterator();
 
@@ -16,5 +20,5 @@ public class Sujeito {
       Observador o =  (Observador) i.next();
           o.update(this); 
     }
-  }
+  }*/
 }

@@ -1,4 +1,8 @@
-package lib;
+package lib.command;
+
+import lib.Livro;
+import lib.ParametrosEntrada;
+import lib.Repositorio;
 
 public class ConsultarLivroComando implements Comando {
 	

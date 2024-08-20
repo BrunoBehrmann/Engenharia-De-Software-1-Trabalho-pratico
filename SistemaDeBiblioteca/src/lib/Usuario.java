@@ -25,5 +25,13 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public int getQntReservas() {
+		return qntReservas;
+	}
+
+	public void setQntReservas(int qntReservas) {
+		this.qntReservas = qntReservas;
+	}
 	
 }

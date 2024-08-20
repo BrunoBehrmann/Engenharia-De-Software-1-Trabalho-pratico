@@ -1,5 +1,7 @@
 package lib;
 
+import lib.command.Comando;
+
 public class SairComando implements Comando {
 
 	@Override
