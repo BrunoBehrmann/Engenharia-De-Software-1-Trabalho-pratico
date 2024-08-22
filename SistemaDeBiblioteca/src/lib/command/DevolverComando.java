@@ -12,7 +12,8 @@ public class DevolverComando implements Comando {
 		Repositorio repositorio = Repositorio.getInstancia();
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 		
-		// implementar aqui acao de devolver
+		repositorio.adicionarLivro(livro);
+		// +?
 	}
 
 }

@@ -2,6 +2,7 @@
 package lib;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Repositorio {
 	
@@ -10,6 +11,8 @@ public class Repositorio {
 	private static Repositorio instancia;
 	//construtor
 	private Repositorio() {
+		this.usuarios = new ArrayList<Usuario>();
+        this.livros = new ArrayList<Livro>();
 	}
 	
 	public static Repositorio getInstancia() {
@@ -41,5 +44,12 @@ public class Repositorio {
 		return null;
 	}
 	
+	public void adicionarLivro(Livro livro) {
+		this.livros.add(livro);
+	}
+	
+	public void adicionarUsuario(Usuario usuario) {
+		this.usuarios.add(usuario);
+	}
 	
 }

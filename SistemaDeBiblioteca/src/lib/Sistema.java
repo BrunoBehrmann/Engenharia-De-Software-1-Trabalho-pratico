@@ -16,6 +16,8 @@ public class Sistema {
 
 	public Sistema() {
 		this.initComandos();
+		BancoDeDados banco = new BancoDeDados();
+		banco.carregaDados();
 	}
 
 	private void initComandos() {

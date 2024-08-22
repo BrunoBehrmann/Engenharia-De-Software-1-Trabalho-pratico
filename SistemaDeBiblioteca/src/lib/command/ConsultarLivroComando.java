@@ -14,6 +14,7 @@ public class ConsultarLivroComando implements Comando {
 		 
 		 String titulo = livro.getTitulo();
 		 System.out.println("Titulo do livro: " + titulo);
+		 
 	}
 	
 }
