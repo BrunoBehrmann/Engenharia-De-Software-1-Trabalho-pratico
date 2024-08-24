@@ -8,8 +8,7 @@ public class Entrada {
 	private String stringEntrada;
 	private Sistema sistema;
 	private Scanner scanner = new Scanner(System.in);
-	//scanner.close(); // Fecha o Scanner
-	Entrada() {
+	private Entrada() {
 		sistema = new Sistema();
 	}
 	

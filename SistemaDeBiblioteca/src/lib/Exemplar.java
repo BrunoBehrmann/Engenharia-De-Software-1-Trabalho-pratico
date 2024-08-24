@@ -5,6 +5,7 @@ public class Exemplar extends Livro{
 	private int codigoExemplar;
 	private boolean disponibilidade;
 	private Usuario usuarioPortador;
+	private Emprestimo emprestimo;
 	
 	// construtor
 	public Exemplar(int codigo, String titulo, String editora, String autores, String edicao, int anoPub, int codigoExemplar, boolean disponibilidade) {
