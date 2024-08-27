@@ -2,7 +2,7 @@ package lib;
 
 import java.util.List;
 
-public class Livro {
+public class Livro extends Sujeito {
 	private int codigo;
 	private String titulo;
 	private String editora;
@@ -21,6 +21,10 @@ public class Livro {
 		this.autores = autores;
 		this.edicao = edicao;
 		this.anoPub = anoPub;
+	}
+	
+	public int getQntReservas() {
+		return this.reservas.size();
 	}
 	
 	public int getCodigo() {
@@ -44,7 +48,7 @@ public class Livro {
 	}
 
 	public void setEditora(String editora) {
-		editora = editora;
+		this.editora = editora;
 	}
 
 	public String getAutores() {
@@ -69,6 +73,14 @@ public class Livro {
 
 	public void setAnoPub(int anoPub) {
 		this.anoPub = anoPub;
+	}
+
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
+
+	public void setReservas(List<Reserva> reservas) {
+		this.reservas = reservas;
 	}
 	
 	

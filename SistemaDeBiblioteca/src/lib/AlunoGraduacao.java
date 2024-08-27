@@ -1,12 +1,14 @@
 package lib;
 
-public class AlunoGraduacao extends Aluno {
+import java.util.List;
 
+public class AlunoGraduacao extends Aluno {
 	
-	
-	public AlunoGraduacao(int id, String nome) {
-		super(id, nome);
-		// TODO Auto-generated constructor stub
+	private int qntEmprestimos = 3;
+	private int qntDiasEmprestimos = 3;
+
+	AlunoGraduacao(int idUsuario, String nome) {
+		super(idUsuario, nome);
 	}
 
 }

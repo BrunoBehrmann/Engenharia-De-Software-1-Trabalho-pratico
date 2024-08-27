@@ -1,5 +1,5 @@
 package lib;
 
 public interface Observador {
-  // public static void atualizar(Sujeito sujeito);
+  public void atualizar(Sujeito sujeito);
 }

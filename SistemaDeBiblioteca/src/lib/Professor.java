@@ -1,8 +1,20 @@
 package lib;
 
-public class Professor implements Observador {
-  public void atualizar(Usuario usuario) {
-    int qntReservas = ((Usuario) usuario).getQntReservas();
-    //System.out.println("Quantidade de Reservas: " + temp);
-  }
+import java.util.List;
+
+public class Professor extends Usuario implements Observador {
+
+	private int qntDiasEmprestimos = 7;
+	
+	Professor(int idUsuario, String nome) {
+		super(idUsuario, nome);
+	}
+
+	@Override
+	public void atualizar(Sujeito sujeito) {
+		int qntReservas = ((Livro) sujeito).getQntReservas();
+	    System.out.println("Quantidade de Reservas: " + qntReservas);
+	}
+	
+	
 }

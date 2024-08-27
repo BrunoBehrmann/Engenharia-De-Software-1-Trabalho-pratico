@@ -24,7 +24,7 @@ public class Repositorio {
 	
 	public Usuario buscaUsuarioPorCodigo(int codigoUsuario) {
 		for (Usuario usuarioLista: usuarios) {
-			if (usuarioLista.getId() == codigoUsuario) {
+			if (usuarioLista.getIdUsuario() == codigoUsuario) {
 				return usuarioLista;
 			}
 		}

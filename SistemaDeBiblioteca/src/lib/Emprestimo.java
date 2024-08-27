@@ -7,4 +7,6 @@ public class Emprestimo {
 	private Exemplar exemplar;
 	private Date dataEmprestimo;
 	private Date dataDevolucaoPrevista;
+	
+	
 }

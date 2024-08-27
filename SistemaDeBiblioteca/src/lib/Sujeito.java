@@ -1,5 +1,6 @@
 package lib;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Sujeito {
@@ -12,13 +13,13 @@ public class Sujeito {
   public void removerObservador(Observador observador) {
     observadores.remove(observador);
   }
-/*
+
   public void notificarObservador(Observador observador) {
     Iterator i = observadores.iterator();
 
-    while (i.HasNext()) {
+    while (i.hasNext()) {
       Observador o =  (Observador) i.next();
-          o.update(this); 
+          o.atualizar(this); 
     }
-  }*/
+  }
 }

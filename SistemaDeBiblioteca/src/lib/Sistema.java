@@ -24,7 +24,7 @@ public class Sistema {
 		comandos.put("emp", new EmprestarComando());
 		comandos.put("dev", new DevolverComando());
 		comandos.put("res", new ReservarLivroComando());
-		//comandos.put("obs", new RegistrarProfessorObservadorComando());
+		comandos.put("obs", new RegistrarProfessorObservadorComando());
 		comandos.put("liv", new ConsultarLivroComando());
 		//comandos.put("usu", new ListarReservasComando());
 		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando());

@@ -4,18 +4,23 @@ import java.util.List;
 
 public class Usuario {
 	
-	private int id;
+	private int idUsuario;
 	private int qntReservas;
 	private String nome;
 	private boolean ehDevedor;
-	private List<Exemplar> exemplares;
+	private List<Reserva> reservas;
 	
-	public int getId() {
-		return id;
+	Usuario (int idUsuario, String nome) {
+		this.idUsuario = idUsuario;
+		this.nome = nome;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+	
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 	public String getNome() {
