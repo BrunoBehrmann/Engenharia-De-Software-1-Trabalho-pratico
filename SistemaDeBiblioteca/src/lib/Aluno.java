@@ -2,13 +2,13 @@ package lib;
 
 import java.util.List;
 
+import lib.command.strategy.ITipoEmprestimo;
+
 public class Aluno extends Usuario {
 
 	private List<Livro> emprestimos;
 	
 	Aluno(int idUsuario, String nome) {
-		super(idUsuario, nome);
-		
 	}
 	
 	public boolean temEmprestimo(Livro livroVerificar) {
@@ -17,9 +17,12 @@ public class Aluno extends Usuario {
 		}
 		return false;
 	}
-	
-	public void addEmprestimo(Livro livro) {
-		this.emprestimos.add(livro);
+
+	@Override
+	public ITipoEmprestimo getTipoEmprestimo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 	
 }

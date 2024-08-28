@@ -1,6 +1,6 @@
-package lib;
+package lib.command;
 
-import lib.command.Comando;
+import lib.ParametrosEntrada;
 
 public class RegistrarProfessorObservadorComando implements Comando {
 

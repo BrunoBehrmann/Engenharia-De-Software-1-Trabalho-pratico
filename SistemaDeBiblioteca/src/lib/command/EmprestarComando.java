@@ -28,9 +28,9 @@ public class EmprestarComando implements Comando {
 		
 		
 		// verifica se o aluno tem reserva feita para o livro
-		if () {
-			
-		} else {
+		try {
+			tipoEmprestimo.emprestar(usuario, livro);
+		} catch {
 			System.out.println("O usuario " + usuario.getNome() + " não tem uma reserva para o livro " + livro.getTitulo() + ".");
 		}
 			
@@ -46,7 +46,4 @@ public class EmprestarComando implements Comando {
 		this.tipoEmprestimo = NovoTipoEmprestimo;
 	}
 	
-	public void emprestar() {
-		return tipoEmprestimo.emprestar();
-	}
 }

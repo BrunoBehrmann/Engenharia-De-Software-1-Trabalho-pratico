@@ -7,7 +7,9 @@ import lib.command.Comando;
 import lib.command.ConsultarLivroComando;
 import lib.command.DevolverComando;
 import lib.command.EmprestarComando;
+import lib.command.RegistrarProfessorObservadorComando;
 import lib.command.ReservarLivroComando;
+import lib.command.SairComando;
 
 public class Sistema {
 
