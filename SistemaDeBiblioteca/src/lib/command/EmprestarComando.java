@@ -28,11 +28,13 @@ public class EmprestarComando implements Comando {
 		
 		
 		// verifica se o aluno tem reserva feita para o livro
+		/*
 		if () {
 			
 		} else {
 			System.out.println("O usuario " + usuario.getNome() + " não tem uma reserva para o livro " + livro.getTitulo() + ".");
 		}
+		*/
 			
 		
 		// se o usuario tiver reserva, excluir aquela reserva e fazer o emprestimo

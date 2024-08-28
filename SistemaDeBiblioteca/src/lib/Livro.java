@@ -13,6 +13,7 @@ public class Livro extends Sujeito {
 	private int qntReservas;
 	private List<Exemplar> exemplares;
 	private List<Reserva> reservas;
+	private List<Observador> observadores;
 	
 	public Livro(int codigo, String titulo, String editora, String autores, String edicao, int anoPub) {
 		this.codigo = codigo;
@@ -82,6 +83,16 @@ public class Livro extends Sujeito {
 	public void setReservas(List<Reserva> reservas) {
 		this.reservas = reservas;
 	}
+
+	public void adicionarReserva(Reserva reserva) {
+		reservas.add(reserva);
+	}
 	
-	
+	public List<Observador> getObservadores() {
+		return observadores;
+	}
+
+	public void adicionarObservadores(Observador observador) {
+		observadores.add(observador);
+	}
 }

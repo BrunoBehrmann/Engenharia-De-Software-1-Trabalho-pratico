@@ -31,12 +31,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public int getQntReservas() {
-		return qntReservas;
+	public List<Reserva> getReservas() {
+		return reservas;
 	}
 
-	public void setQntReservas(int qntReservas) {
-		this.qntReservas = qntReservas;
+	public int getQntReservas() {
+		return reservas.size();
 	}
 	
 }

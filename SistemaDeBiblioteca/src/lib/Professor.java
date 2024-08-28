@@ -13,8 +13,13 @@ public class Professor extends Usuario implements Observador {
 	@Override
 	public void atualizar(Sujeito sujeito) {
 		int qntReservas = ((Livro) sujeito).getQntReservas();
-	    System.out.println("Quantidade de Reservas: " + qntReservas);
+	    // System.out.println("Quantidade de Reservas: " + qntReservas);
 	}
 	
-	
+	public boolean ehObservador (Livro livro) {
+		if (livro.getObservadores().contains(this)) {
+			return true;
+		}
+		return false;
+	}
 }

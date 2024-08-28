@@ -2,14 +2,16 @@ package lib;
 
 import java.util.Date;
 
-public class Reserva implements Observador{
+public class Reserva{
 	private Livro livro;
 	private Usuario usuario;
 	private Date dataDevolucao;
 	
-	@Override
-	public void atualizar(Sujeito sujeito) {
-		
+	public Reserva (Livro livro, Usuario usuario, Date dataDevolucao) {
+		this.livro = livro;
+		this.usuario = usuario;
+		this.dataDevolucao = dataDevolucao;
 	}
-	
+
+
 }

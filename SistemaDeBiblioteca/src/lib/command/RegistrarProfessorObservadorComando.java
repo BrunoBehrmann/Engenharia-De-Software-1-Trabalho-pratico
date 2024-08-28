@@ -2,12 +2,11 @@ package lib.command;
 
 import lib.Livro;
 import lib.ParametrosEntrada;
-//import lib.Professor;
+import lib.Professor;
 import lib.Repositorio;
-import lib.Reserva;
-import lib.Usuario;
+//import lib.command.Comando;
 
-public class ReservarLivroComando implements Comando {
+public class RegistrarProfessorObservadorComando implements Comando {
 
 	@Override
 	public void executar(ParametrosEntrada parametros) {
@@ -16,12 +15,10 @@ public class ReservarLivroComando implements Comando {
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 
 		int codigoUsuario = parametros.getCodigo1();
-		Usuario usuario = repositorio.buscaUsuarioPorCodigo(codigoUsuario);
+		Professor professor = (Professor) repositorio.buscaUsuarioPorCodigo(codigoUsuario);
+		
+		livro.adicionarObservadores(professor);
 
-		Reserva reserva = new Reserva(livro, usuario, null); //adicionar sistema de data e hora
-
-		livro.adicionarReserva(reserva);
-		usuario.
 	}
 
 }
