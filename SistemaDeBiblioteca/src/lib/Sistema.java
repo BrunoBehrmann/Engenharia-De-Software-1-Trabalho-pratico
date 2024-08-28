@@ -23,14 +23,14 @@ public class Sistema {
 	}
 
 	private void initComandos() {
-		comandos.put("emp", new EmprestarComando());
-		comandos.put("dev", new DevolverComando());
-		comandos.put("res", new ReservarLivroComando());
-		comandos.put("obs", new RegistrarProfessorObservadorComando());
-		comandos.put("liv", new ConsultarLivroComando());
-		//comandos.put("usu", new ListarReservasComando());
-		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando());
-		comandos.put("sai", new SairComando());
+		comandos.put("emp", new EmprestarComando());  // falta
+		comandos.put("dev", new DevolverComando()); // falta
+		comandos.put("res", new ReservarLivroComando()); // falta
+		comandos.put("obs", new RegistrarProfessorObservadorComando()); // ok
+		comandos.put("liv", new ConsultarLivroComando()); // ok
+		//comandos.put("usu", new ConsultarUsuarioComando()); // falta
+		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta
+		comandos.put("sai", new SairComando()); // ok
 	}
 
 	public void executarComando(String comandoString, ParametrosEntrada parametros) {

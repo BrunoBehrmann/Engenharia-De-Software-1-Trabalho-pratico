@@ -44,7 +44,7 @@ public class Entrada {
         int codigo2 = Integer.parseInt(partes[2]);
         
 		parametros.setCodigo1(codigo1);
-		parametros.setCodigo1(codigo2);
+		parametros.setCodigo2(codigo2);
 		
 		return parametros;
 	}

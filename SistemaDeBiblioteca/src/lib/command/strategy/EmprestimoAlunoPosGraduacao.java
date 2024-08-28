@@ -4,7 +4,7 @@ import lib.IUsuario;
 import lib.Livro;
 import lib.Usuario;
 
-public class EmprestimoProfessor implements ITipoEmprestimo {
+public class EmprestimoAlunoPosGraduacao implements ITipoEmprestimo {
 
 	@Override
 	public void emprestar(IUsuario ususairo, Livro livro) {

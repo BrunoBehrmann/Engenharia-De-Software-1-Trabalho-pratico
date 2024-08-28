@@ -1,9 +1,9 @@
 package lib.command.strategy;
 
+import lib.IUsuario;
 import lib.Livro;
-import lib.Usuario;
 
 // estrategia
 public interface ITipoEmprestimo {
-	public void emprestar(Usuario ususairo, Livro livro);
+	void emprestar(IUsuario ususairo, Livro livro);
 }

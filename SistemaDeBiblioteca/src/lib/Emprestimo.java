@@ -8,5 +8,8 @@ public class Emprestimo {
 	private Date dataEmprestimo;
 	private Date dataDevolucaoPrevista;
 	
+	public Exemplar getExemplar() {
+		return exemplar;
+	}
 	
 }

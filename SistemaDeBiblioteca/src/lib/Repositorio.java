@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class Repositorio {
 	
-	private List<Usuario> usuarios;
+	private List<IUsuario> usuarios;
 	private List<Livro> livros;
 	private static Repositorio instancia;
 	//construtor
 	private Repositorio() {
-		this.usuarios = new ArrayList<Usuario>();
+		this.usuarios = new ArrayList<IUsuario>();
         this.livros = new ArrayList<Livro>();
 	}
 	
@@ -22,8 +22,8 @@ public class Repositorio {
 		return instancia;
 	}
 	
-	public Usuario buscaUsuarioPorCodigo(int codigoUsuario) {
-		for (Usuario usuarioLista: usuarios) {
+	public IUsuario buscaUsuarioPorCodigo(int codigoUsuario) {
+		for (IUsuario usuarioLista: usuarios) {
 			if (usuarioLista.getIdUsuario() == codigoUsuario) {
 				return usuarioLista;
 			}
@@ -48,7 +48,7 @@ public class Repositorio {
 		this.livros.add(livro);
 	}
 	
-	public void adicionarUsuario(Usuario usuario) {
+	public void adicionarUsuario(IUsuario usuario) {
 		this.usuarios.add(usuario);
 	}
 	
