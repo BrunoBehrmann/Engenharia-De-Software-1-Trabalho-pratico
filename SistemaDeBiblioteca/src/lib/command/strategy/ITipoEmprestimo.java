@@ -5,5 +5,5 @@ import lib.Livro;
 
 // estrategia
 public interface ITipoEmprestimo {
-	void emprestar(IUsuario ususairo, Livro livro);
+	void emprestar(IUsuario usuario, Livro livro);
 }
