@@ -10,7 +10,7 @@ public abstract class Usuario implements IUsuario {
     private int idUsuario;
     private String nome;
     private int qntReservas;
-    private boolean ehDevedor;
+    private boolean devedor;
     private List<Reserva> reservas;
     private List<Emprestimo> emprestimos;
 
@@ -55,6 +55,14 @@ public abstract class Usuario implements IUsuario {
 
 	public void setEmprestimos(List<Emprestimo> emprestimos) {
 		this.emprestimos = emprestimos;
+	}
+
+	public boolean isDevedor() {
+		return devedor;
+	}
+
+	public void setDevedor(boolean devedor) {
+		this.devedor = devedor;
 	}
 
 	

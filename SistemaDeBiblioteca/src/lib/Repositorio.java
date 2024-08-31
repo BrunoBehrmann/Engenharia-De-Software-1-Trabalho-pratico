@@ -34,7 +34,7 @@ public class Repositorio {
 	}
 	
 	public Livro buscaLivroPorCodigo(int codigoLivro) {
-		for (Livro livroLista: livros) {
+		for (Livro livroLista: this.livros) {
 			if (livroLista.getCodigo() == codigoLivro) {
 				System.out.println();
 				return livroLista;
@@ -42,6 +42,14 @@ public class Repositorio {
 		}
 		System.out.println("Livro nao encontrado");
 		return null;
+	}
+	
+	public boolean temExemplarDisponivel(Livro livro) {
+		if (buscaLivroRepositorio(livro).getQntExemplaresDisponiveis() > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void adicionarLivro(Livro livro) {
@@ -52,4 +60,11 @@ public class Repositorio {
 		this.usuarios.add(usuario);
 	}
 	
+	public Livro buscaLivroRepositorio(Livro livro) {
+		for (Livro livroRepositorio: this.livros) {
+			if (livroRepositorio == livro)
+				return livroRepositorio;
+		}
+		return null;
+	}
 }

@@ -1,7 +1,5 @@
 package lib;
 
-import java.util.List;
-
 import lib.command.strategy.EmprestimoProfessor;
 import lib.command.strategy.ITipoEmprestimo;
 
@@ -17,12 +15,20 @@ public class Professor extends Usuario implements Observador, IProfessor {
 	@Override
 	public void atualizar(Sujeito sujeito) {
 		int qntReservas = ((Livro) sujeito).getQntReservas();
-	    // System.out.println("Quantidade de Reservas: " + qntReservas);
+	    System.out.println("Quantidade de Reservas: " + qntReservas);
 	}
 
 	@Override
 	public ITipoEmprestimo getTipoEmprestimo() {
 		return new EmprestimoProfessor();
+	}
+	
+	@Override
+	public boolean temReservaLivro(Livro livroVerificar) {
+		if (getReservas().contains(livroVerificar))
+			return true;
+		else
+			return false;
 	}
 	
 	public boolean ehObservador (Livro livro) {
@@ -31,4 +37,6 @@ public class Professor extends Usuario implements Observador, IProfessor {
 		}
 		return false;
 	}
+	
+	
 }

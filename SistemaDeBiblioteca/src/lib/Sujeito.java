@@ -3,8 +3,11 @@ package lib;
 import java.util.Iterator;
 import java.util.List;
 
-public class Sujeito {
-  private List<Observador> observadores;
+public interface Sujeito {
+	public void adicionarObservador(Observador o);
+	public void removerObservador(Observador o);
+	public void notificarObservadores();
+  /*private List<Observador> observadores;
   
   public void addObservador(Observador observador) {
     observadores.add(observador);
@@ -21,5 +24,5 @@ public class Sujeito {
       Observador o =  (Observador) i.next();
           o.atualizar(this); 
     }
-  }
+  }*/
 }

@@ -1,18 +1,19 @@
 package lib;
 
-public class Exemplar extends Livro{
+public class Exemplar {
 	
+	private Livro livro;
 	private int codigoExemplar;
 	private boolean disponibilidade;
 	private Usuario usuarioPortador;
 	private Emprestimo emprestimo;
 	
 	// construtor
-	public Exemplar(int codigo, String titulo, String editora, String autores, String edicao, int anoPub, int codigoExemplar, boolean disponibilidade) {
-		super(codigo, titulo, editora, autores, edicao, anoPub);
-		this.codigoExemplar = codigoExemplar;
-		this.disponibilidade = disponibilidade;
-	}
+	public Exemplar(Livro livro, int codigoExemplar, boolean disponibilidade) {
+        this.livro = livro;
+        this.codigoExemplar = codigoExemplar;
+        this.disponibilidade = disponibilidade;
+    }
 	
 	public boolean isDisponibilidade() {
 		return disponibilidade;

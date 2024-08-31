@@ -26,7 +26,7 @@ public class Sistema {
 		comandos.put("emp", new EmprestarComando());  // falta
 		comandos.put("dev", new DevolverComando()); // falta
 		comandos.put("res", new ReservarLivroComando()); // falta
-		comandos.put("obs", new RegistrarProfessorObservadorComando()); // ok
+		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica
 		comandos.put("liv", new ConsultarLivroComando()); // ok
 		//comandos.put("usu", new ConsultarUsuarioComando()); // falta
 		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta

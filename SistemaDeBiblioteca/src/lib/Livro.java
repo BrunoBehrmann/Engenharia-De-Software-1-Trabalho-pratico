@@ -1,16 +1,18 @@
 package lib;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Livro extends Sujeito {
+public class Livro implements Sujeito {
 	private int codigo;
 	private String titulo;
 	private String editora;
 	private String autores;
 	private String edicao;
 	private int anoPub;
-	private int qtdExemplar;
-	private int qntReservas;
+	private int qntExemplaresDisponiveis;
+	private int qntReservas; // lembrar uso
+	private int qntNotificacaoObs;
 	private List<Exemplar> exemplares;
 	private List<Reserva> reservas;
 	private List<Observador> observadores;
@@ -23,6 +25,14 @@ public class Livro extends Sujeito {
 		this.autores = autores;
 		this.edicao = edicao;
 		this.anoPub = anoPub;
+		
+		this.qntExemplaresDisponiveis = 0;
+		this.qntReservas = 0;
+		this.qntNotificacaoObs = 0;
+		
+		this.exemplares = new ArrayList<>();
+        this.reservas = new ArrayList<>();
+        this.observadores = new ArrayList<>();
 	}
 	
 	public int getQntReservas() {
@@ -92,8 +102,61 @@ public class Livro extends Sujeito {
 	public List<Observador> getObservadores() {
 		return observadores;
 	}
-
-	public void adicionarObservadores(Observador observador) {
-		observadores.add(observador);
+	
+	@Override
+	public void adicionarObservador(Observador o) {
+		observadores.add(o);
 	}
+	
+	@Override
+	public void removerObservador(Observador o) {
+		int i = observadores.indexOf(o);
+		if (i >= 0) {
+			observadores.remove(i);
+		}
+	}
+	
+	@Override
+	public void notificarObservadores() {
+		for (int i = 0; i < observadores.size(); i++) {
+			Observador observador = observadores.get(i);
+			observador.atualizar(this);
+		}
+	}
+
+	public int getQntNotificacaoObs() {
+		return qntNotificacaoObs;
+	}
+
+	public void setQntNotificacaoObs(int qntNotificacaoObs) {
+		this.qntNotificacaoObs = qntNotificacaoObs;
+		notificarObservadores();
+	}
+	
+	public int getQntExemplaresDisponiveis() {
+		return qntExemplaresDisponiveis;
+	}
+
+	public void setQntExemplaresDisponiveis(int qntExemplaresDisponiveis) {
+		this.qntExemplaresDisponiveis = qntExemplaresDisponiveis;
+	}
+
+	public List<Exemplar> getExemplares() {
+		return exemplares;
+	}
+
+	public void setExemplares(List<Exemplar> exemplares) {
+		this.exemplares = exemplares;
+	}
+	
+	public void adicionarExemplar(Exemplar exemplar) {
+		this.exemplares.add(exemplar);
+		this.qntExemplaresDisponiveis += 1;
+	}
+	
+	public void removerExemplar(Exemplar exemplar) {
+		this.exemplares.remove(exemplar);
+		this.qntExemplaresDisponiveis -= 1;
+	}
+
 }

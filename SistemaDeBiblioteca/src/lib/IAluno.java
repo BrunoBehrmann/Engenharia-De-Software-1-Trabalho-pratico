@@ -1,8 +1,9 @@
 package lib;
 
 public interface IAluno {
-
-	public boolean temEmprestimo(Livro livroVerificar);
 	
+	// verificar uso
+	public boolean temEmprestimoLivro(Livro livroVerificar);
 	
+	public boolean podeFazerEmprestimo();
 }

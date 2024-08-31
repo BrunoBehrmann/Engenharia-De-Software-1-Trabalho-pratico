@@ -17,7 +17,8 @@ public class RegistrarProfessorObservadorComando implements Comando {
 		int codigoUsuario = parametros.getCodigo1();
 		Professor professor = (Professor) repositorio.buscaUsuarioPorCodigo(codigoUsuario);
 		
-		livro.adicionarObservadores(professor);
+		// logica 2 livros em algum lugar
+		livro.adicionarObservador(professor);
 
 	}
 

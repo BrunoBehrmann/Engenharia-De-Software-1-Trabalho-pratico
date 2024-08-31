@@ -7,9 +7,12 @@ import lib.Usuario;
 public class EmprestimoAlunoPosGraduacao implements ITipoEmprestimo {
 
 	@Override
-	public void emprestar(IUsuario ususairo, Livro livro) {
-		// TODO Auto-generated method stub
-
+	public void emprestar(IUsuario usuario, Livro livro) {
+		if (usuario.temReservaLivro(livro)){
+			
+		} else {
+			System.out.println("O usuario " + usuario.getNome() + " não tem uma reserva para o livro " + livro.getTitulo() + ".");
+		}
 	}
 
 }
