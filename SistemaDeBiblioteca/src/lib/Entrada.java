@@ -23,6 +23,7 @@ public class Entrada {
 		while (true) {
             this.stringEntrada = scanner.nextLine(); // Lê a entrada como uma string
             sistema.executarComando(pegaComandoDaEntrada(), pegaParamentrosDaEntrada());
+            System.out.println();
         }
 		
 	}

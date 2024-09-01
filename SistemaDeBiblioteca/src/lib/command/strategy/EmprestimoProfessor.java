@@ -1,10 +1,10 @@
 package lib.command.strategy;
 
 import lib.Emprestimo;
-import lib.IUsuario;
 import lib.Livro;
 import lib.Repositorio;
-import lib.Usuario;
+import lib.users.IUsuario;
+import lib.users.Usuario;
 
 public class EmprestimoProfessor implements ITipoEmprestimo {
 
@@ -22,6 +22,7 @@ public class EmprestimoProfessor implements ITipoEmprestimo {
 					Emprestimo emp = new Emprestimo(usuario, livro.buscaExemplar());
 					usuario.adicionarEmprestimo(emp);
 					usuario.removerReserva(livro);
+					System.out.println("Sucesso! O livro " + livro.getTitulo() + " foi emprestado para o professor " + usuario.getNome() + ".");
 					
 				} else {
 					System.out.println("Não foi possível emprestar o livro " + livro.getTitulo() + ". O professor " + usuario.getNome() + " é devedor de livro.");

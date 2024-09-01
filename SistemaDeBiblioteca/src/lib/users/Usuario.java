@@ -1,8 +1,11 @@
-package lib;
+package lib.users;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import lib.Emprestimo;
+import lib.Livro;
+import lib.Reserva;
 import lib.command.strategy.ITipoEmprestimo;
 
 public abstract class Usuario implements IUsuario {
@@ -33,6 +36,47 @@ public abstract class Usuario implements IUsuario {
     	}
     	return false;
     }
+    
+	
+	public void adicionarReserva(Reserva reserva) {
+		this.reservas.add(reserva);
+		this.qntReservas += 1;
+		reserva.getLivro().setQntReservas(reserva.getLivro().getQntReservas() + 1);
+	}
+    
+    public void removerReserva(Livro livro) {
+		for (Reserva reserva: this.reservas) {
+    		if (reserva.getLivro().equals(livro)) {
+    			this.reservas.remove(reserva);
+    			this.qntReservas -= 1;
+    			reserva.getLivro().setQntReservas(reserva.getLivro().getQntReservas() - 1);
+    			break;
+    		}
+    	}
+		
+	}
+	
+	public void adicionarEmprestimo(Emprestimo emprestimo) {
+		this.emprestimos.add(emprestimo);
+	}
+	
+	public boolean temEmprestimoLivro(Livro livro) {
+    	for (Emprestimo emprestimo: this.emprestimos) {
+    		if (emprestimo.getExemplar().equals(livro.buscaExemplar())) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+	
+	public void removerEmprestimo(Livro livro) {
+		for (Emprestimo emprestimo: this.emprestimos) {
+    		if (emprestimo.getExemplar().equals(livro.buscaExemplar())) {
+    			this.emprestimos.remove(emprestimo);
+    			break;
+    		}
+    	}
+	}
     
     public int getIdUsuario() {
         return idUsuario;
@@ -76,24 +120,6 @@ public abstract class Usuario implements IUsuario {
 
 	public void setQntReservas(int qntReservas) {
 		this.qntReservas = qntReservas;
-	}
-	
-	public void adicionarReserva(Reserva reserva) {
-		this.reservas.add(reserva);
-	}
-	
-	public void removerReserva(Livro livro) {
-		for (Reserva reserva: this.reservas) {
-    		if (reserva.getLivro().equals(livro)) {
-    			this.reservas.remove(reserva);
-    			break;
-    		}
-    	}
-		
-	}
-	
-	public void adicionarEmprestimo(Emprestimo emprestimo) {
-		this.emprestimos.add(emprestimo);
 	}
 	
 }

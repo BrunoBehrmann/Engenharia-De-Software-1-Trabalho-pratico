@@ -2,12 +2,12 @@ package lib.command;
 
 import java.time.LocalDateTime;
 
-import lib.IUsuario;
 import lib.Livro;
 import lib.ParametrosEntrada;
 import lib.Repositorio;
 import lib.Reserva;
-import lib.Usuario;
+import lib.users.IUsuario;
+import lib.users.Usuario;
 
 public class ReservarLivroComando implements Comando {
 
@@ -25,7 +25,6 @@ public class ReservarLivroComando implements Comando {
 				Reserva reserva = new Reserva(livro, usuario, LocalDateTime.now());
 				livro.adicionarReserva(reserva);
 				usuario.adicionarReserva(reserva);
-				usuario.setQntReservas(usuario.getQntReservas() + 1);
 				System.out.println("Sucesso! O usuario " + usuario.getNome() + " reservou o livro " + livro.getTitulo() + ".");
 			} else {
 				System.out.println("O usuario " + usuario.getNome() + " ja possui uma reserva para o livro " + livro.getTitulo() + ".");

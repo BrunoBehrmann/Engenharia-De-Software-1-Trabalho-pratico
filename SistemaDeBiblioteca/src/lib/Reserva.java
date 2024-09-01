@@ -2,6 +2,8 @@ package lib;
 
 import java.time.LocalDateTime;
 
+import lib.users.IUsuario;
+
 public class Reserva{
 	private Livro livro;
 	private IUsuario usuario;

@@ -24,13 +24,13 @@ public class Sistema {
 
 	private void initComandos() {
 		comandos.put("emp", new EmprestarComando());  // falta
-		comandos.put("dev", new DevolverComando()); // falta
+		comandos.put("dev", new DevolverComando()); // ok!
 		comandos.put("res", new ReservarLivroComando()); // ok!
 		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica
 		comandos.put("liv", new ConsultarLivroComando()); // ok
 		//comandos.put("usu", new ConsultarUsuarioComando()); // falta
 		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta
-		comandos.put("sai", new SairComando()); // ok
+		comandos.put("sai", new SairComando()); // ok!
 	}
 
 	public void executarComando(String comandoString, ParametrosEntrada parametros) {

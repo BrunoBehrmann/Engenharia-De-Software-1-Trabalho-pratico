@@ -1,11 +1,8 @@
-package lib;
+package lib.users;
+
+import lib.Livro;
 
 public interface IAluno {
-	
-	
-	
-	// verificar uso
 	public boolean temEmprestimoLivro(Livro livroVerificar);
-	
 	public boolean podeFazerEmprestimo();
 }

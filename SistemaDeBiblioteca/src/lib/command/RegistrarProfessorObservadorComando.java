@@ -2,9 +2,9 @@ package lib.command;
 
 import lib.Livro;
 import lib.ParametrosEntrada;
-import lib.Professor;
 import lib.Repositorio;
 //import lib.command.Comando;
+import lib.users.Professor;
 
 public class RegistrarProfessorObservadorComando implements Comando {
 

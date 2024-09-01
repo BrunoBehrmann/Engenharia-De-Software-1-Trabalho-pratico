@@ -1,9 +1,9 @@
 package lib.command.strategy;
 
-import lib.IUsuario;
 import lib.Livro;
 import lib.Repositorio;
-import lib.Usuario;
+import lib.users.IUsuario;
+import lib.users.Usuario;
 
 public class EmprestimoAlunoPosGraduacao implements ITipoEmprestimo {
 

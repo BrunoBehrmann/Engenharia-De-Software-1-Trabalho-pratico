@@ -1,25 +1,26 @@
-package lib;
+package lib.users;
 
-import lib.command.strategy.EmprestimoAlunoPosGraduacao;
+import lib.Livro;
+import lib.command.strategy.EmprestimoAlunoGraduacao;
 import lib.command.strategy.ITipoEmprestimo;
 
-public class AlunoPosGraduacao extends Usuario implements IAluno {
+public class AlunoGraduacao extends Usuario implements IAluno {
 	
 	private int qntEmprestimos = 0;
 	private int qntDiasEmprestimos = 0;
 	
-	private int qntMAXIMAEmprestimos = 4;
-	private int qntMAXIMADiasEmprestimos = 5;
+	private int qntMAXIMAEmprestimos = 3;
+	private int qntMAXIMADiasEmprestimos = 3;
 	
-	AlunoPosGraduacao(int idUsuario, String nome) {
+	public AlunoGraduacao(int idUsuario, String nome) {
 		super(idUsuario, nome);
 	}
 	
 	@Override
 	public ITipoEmprestimo getTipoEmprestimo() {
-		return new EmprestimoAlunoPosGraduacao();
+		return new EmprestimoAlunoGraduacao();
 	}
-
+	
 	@Override
 	public boolean temEmprestimoLivro(Livro livroVerificar) {
 		if (getEmprestimos().contains(livroVerificar))
@@ -27,7 +28,7 @@ public class AlunoPosGraduacao extends Usuario implements IAluno {
 			else
 				return false;
 	}
-
+	
 	@Override
 	public boolean podeFazerEmprestimo() {
 		if (qntEmprestimos < qntMAXIMAEmprestimos) {
@@ -53,5 +54,4 @@ public class AlunoPosGraduacao extends Usuario implements IAluno {
 	}
 
 	
-
 }

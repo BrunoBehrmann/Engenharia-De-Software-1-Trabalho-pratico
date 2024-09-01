@@ -1,5 +1,10 @@
 package lib;
 
+import lib.users.AlunoGraduacao;
+import lib.users.AlunoPosGraduacao;
+import lib.users.IUsuario;
+import lib.users.Professor;
+
 public class BancoDeDados {
 
 	public void carregaDados() {

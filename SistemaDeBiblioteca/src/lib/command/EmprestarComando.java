@@ -1,10 +1,10 @@
 package lib.command;
 
-import lib.IUsuario;
 import lib.Livro;
 import lib.ParametrosEntrada;
 import lib.Repositorio;
 import lib.command.strategy.ITipoEmprestimo;
+import lib.users.IUsuario;
 
 public class EmprestarComando implements Comando {
 	

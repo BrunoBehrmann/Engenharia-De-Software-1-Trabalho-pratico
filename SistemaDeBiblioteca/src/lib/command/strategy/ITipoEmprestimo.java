@@ -1,7 +1,7 @@
 package lib.command.strategy;
 
-import lib.IUsuario;
 import lib.Livro;
+import lib.users.IUsuario;
 
 // estrategia
 public interface ITipoEmprestimo {

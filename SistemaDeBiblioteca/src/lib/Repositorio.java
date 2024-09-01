@@ -2,6 +2,9 @@
 package lib;
 
 import java.util.List;
+
+import lib.users.IUsuario;
+
 import java.util.ArrayList;
 
 public class Repositorio {
@@ -42,7 +45,7 @@ public class Repositorio {
 	
 	public Livro buscaLivroPorCodigo(int codigoLivro) {
 		for (Livro livroLista: this.livros) {
-			if (livroLista.getCodigo() == codigoLivro) {
+			if (livroLista.getCodigoBiblioteca() == codigoLivro) {
 				System.out.println();
 				return livroLista;
 			}

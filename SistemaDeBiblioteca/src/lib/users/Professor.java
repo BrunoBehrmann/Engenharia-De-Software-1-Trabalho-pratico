@@ -1,17 +1,30 @@
-package lib;
+package lib.users;
 
+import lib.Livro;
+import lib.Observador;
+import lib.Sujeito;
 import lib.command.strategy.EmprestimoProfessor;
 import lib.command.strategy.ITipoEmprestimo;
 
-public class Professor extends Usuario implements Observador, IProfessor {
+public class Professor extends Usuario implements IProfessor, Observador {
 
-	private int qntDiasEmprestimos = 7;
+	private int qntDiasEmprestimo = 7;
 	// contador notificacoes
 	
-	Professor(int idUsuario, String nome) {
+	public Professor(int idUsuario, String nome) {
 		super(idUsuario, nome);
 	}
+	
+	@Override
+	public int getQntDiasEmprestimo() {
+		return this.getQntDiasEmprestimo();
+	}
 
+	@Override
+	public void setQntDiasEmprestimo(int qntDiasEmprestimo) {
+		this.qntDiasEmprestimo = qntDiasEmprestimo;
+	}
+	
 	@Override
 	public void atualizar(Sujeito sujeito) {
 		int qntReservas = ((Livro) sujeito).getQntReservas();
@@ -29,6 +42,7 @@ public class Professor extends Usuario implements Observador, IProfessor {
 		}
 		return false;
 	}
+
 	
 	
 }

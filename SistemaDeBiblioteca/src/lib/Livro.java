@@ -3,7 +3,7 @@ package lib;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Livro implements Sujeito {
+public class Livro implements ILivro, Sujeito {
 	private int codigo;
 	private String titulo;
 	private String editora;
@@ -11,7 +11,7 @@ public class Livro implements Sujeito {
 	private String edicao;
 	private int anoPub;
 	private int qntExemplaresDisponiveis;
-	private int qntReservas; // lembrar uso
+	private int qntReservas;
 	private int qntNotificacaoObs;
 	private List<Exemplar> exemplares;
 	private List<Reserva> reservas; // o livro precisa de uma lista de reservas?
@@ -27,7 +27,7 @@ public class Livro implements Sujeito {
 		this.anoPub = anoPub;
 		
 		this.qntExemplaresDisponiveis = 0;
-		this.qntReservas = 0;
+		this.setQntReservas(0);
 		this.qntNotificacaoObs = 0;
 		
 		this.exemplares = new ArrayList<>();
@@ -35,42 +35,67 @@ public class Livro implements Sujeito {
         this.observadores = new ArrayList<>();
 	}
 	
-	public int getQntReservas() {
-		return this.reservas.size();
-	}
-	
-	public int getCodigo() {
+	@Override
+	public int getCodigoBiblioteca() {
 		return codigo;
 	}
-
-	public void setCodigo(int codigo) {
+	
+	@Override
+	public void setCodigoBiblioteca(int codigo) {
 		this.codigo = codigo;
 	}
-
+	
+	@Override
 	public String getTitulo() {
 		return titulo;
 	}
 
+	@Override
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
+	@Override
 	public String getEditora() {
 		return editora;
 	}
 
+	@Override
 	public void setEditora(String editora) {
 		this.editora = editora;
 	}
 
+	@Override
 	public String getAutores() {
 		return autores;
 	}
 
+	@Override
 	public void setAutores(String autores) {
 		this.autores = autores;
 	}
 
+	@Override
+	public void adicionarObservador(Observador o) {
+		observadores.add(o);
+	}
+	
+	@Override
+	public void removerObservador(Observador o) {
+		int i = observadores.indexOf(o);
+		if (i >= 0) {
+			observadores.remove(i);
+		}
+	}
+	
+	@Override
+	public void notificarObservadores() {
+		for (int i = 0; i < observadores.size(); i++) {
+			Observador observador = observadores.get(i);
+			observador.atualizar(this);
+		}
+	}
+	
 	public String getEdicao() {
 		return edicao;
 	}
@@ -101,27 +126,6 @@ public class Livro implements Sujeito {
 	
 	public List<Observador> getObservadores() {
 		return observadores;
-	}
-	
-	@Override
-	public void adicionarObservador(Observador o) {
-		observadores.add(o);
-	}
-	
-	@Override
-	public void removerObservador(Observador o) {
-		int i = observadores.indexOf(o);
-		if (i >= 0) {
-			observadores.remove(i);
-		}
-	}
-	
-	@Override
-	public void notificarObservadores() {
-		for (int i = 0; i < observadores.size(); i++) {
-			Observador observador = observadores.get(i);
-			observador.atualizar(this);
-		}
 	}
 
 	public int getQntNotificacaoObs() {
@@ -166,6 +170,14 @@ public class Livro implements Sujeito {
 			}
 		}
 		return null;
+	}
+
+	public int getQntReservas() {
+		return qntReservas;
+	}
+
+	public void setQntReservas(int qntReservas) {
+		this.qntReservas = qntReservas;
 	}
 
 }

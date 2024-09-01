@@ -1,5 +1,7 @@
 package lib;
 
+import lib.users.Usuario;
+
 public class Exemplar {
 	
 	private Livro livro;

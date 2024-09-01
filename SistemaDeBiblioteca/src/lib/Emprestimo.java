@@ -2,6 +2,8 @@ package lib;
 
 import java.util.Date;
 
+import lib.users.IUsuario;
+
 public class Emprestimo {
 	private IUsuario usuario;
 	private Exemplar exemplar;
