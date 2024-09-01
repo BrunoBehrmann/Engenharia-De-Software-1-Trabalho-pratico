@@ -18,12 +18,10 @@ public class EmprestarComando implements Comando {
 		IUsuario usuario = repositorio.buscaUsuarioPorCodigo(codigoUsuario);
 		Livro livro = repositorio.buscaLivroPorCodigo(codigoLivro);
 
-        try {
-            this.tipoEmprestimo.emprestar(usuario, livro);
-        } catch (Exception e) {
-            System.out.println("Parametros de entrada incorretos.");
-        }
-		
+    	// Inicializa tipoEmprestimo com base no usuário
+        this.tipoEmprestimo = usuario.getTipoEmprestimo();
+        this.tipoEmprestimo.emprestar(usuario, livro);
+        
 	}
 
 }

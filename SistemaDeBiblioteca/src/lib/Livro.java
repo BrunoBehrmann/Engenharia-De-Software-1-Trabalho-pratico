@@ -14,7 +14,7 @@ public class Livro implements Sujeito {
 	private int qntReservas; // lembrar uso
 	private int qntNotificacaoObs;
 	private List<Exemplar> exemplares;
-	private List<Reserva> reservas;
+	private List<Reserva> reservas; // o livro precisa de uma lista de reservas?
 	private List<Observador> observadores;
 	// quantidade de vezes livro
 	
@@ -157,6 +157,15 @@ public class Livro implements Sujeito {
 	public void removerExemplar(Exemplar exemplar) {
 		this.exemplares.remove(exemplar);
 		this.qntExemplaresDisponiveis -= 1;
+	}
+	
+	public Exemplar buscaExemplar() {
+		for(Exemplar exemplar: this.exemplares) {
+			if(exemplar.getLivro().equals(this)) {
+				return exemplar;
+			}
+		}
+		return null;
 	}
 
 }

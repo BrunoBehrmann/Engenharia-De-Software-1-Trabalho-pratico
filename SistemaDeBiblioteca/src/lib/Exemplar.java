@@ -8,7 +8,6 @@ public class Exemplar {
 	private Usuario usuarioPortador;
 	private Emprestimo emprestimo;
 	
-	// construtor
 	public Exemplar(Livro livro, int codigoExemplar, boolean disponibilidade) {
         this.livro = livro;
         this.codigoExemplar = codigoExemplar;
@@ -29,6 +28,26 @@ public class Exemplar {
 	
 	public void setCodigoExemplar(int codigoExemplar) {
 		this.codigoExemplar = codigoExemplar;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public Usuario getUsuarioPortador() {
+		return usuarioPortador;
+	}
+
+	public void setUsuarioPortador(Usuario usuarioPortador) {
+		this.usuarioPortador = usuarioPortador;
+	}
+
+	public Emprestimo getEmprestimo() {
+		return emprestimo;
+	}
+
+	public void setEmprestimo(Emprestimo emprestimo) {
+		this.emprestimo = emprestimo;
 	}
 	
 }

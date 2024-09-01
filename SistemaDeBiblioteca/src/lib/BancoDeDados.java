@@ -48,6 +48,17 @@ public class BancoDeDados {
 		l400.adicionarExemplar(e8);
 		l400.adicionarExemplar(e9);
 		
+		repositorio.adicionarLivro(l100);
+		repositorio.adicionarLivro(l101);
+		repositorio.adicionarLivro(l200);
+		repositorio.adicionarLivro(l201);
+		repositorio.adicionarLivro(l300);
+		repositorio.adicionarLivro(l301);
+		repositorio.adicionarLivro(l400);
+		repositorio.adicionarLivro(l401);
+		
+		
+		
 	}
 	
 }

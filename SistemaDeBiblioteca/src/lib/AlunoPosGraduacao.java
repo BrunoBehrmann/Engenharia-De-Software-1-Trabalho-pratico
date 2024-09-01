@@ -1,7 +1,5 @@
 package lib;
 
-import java.util.List;
-
 import lib.command.strategy.EmprestimoAlunoPosGraduacao;
 import lib.command.strategy.ITipoEmprestimo;
 
@@ -16,6 +14,11 @@ public class AlunoPosGraduacao extends Usuario implements IAluno {
 	AlunoPosGraduacao(int idUsuario, String nome) {
 		super(idUsuario, nome);
 	}
+	
+	@Override
+	public ITipoEmprestimo getTipoEmprestimo() {
+		return new EmprestimoAlunoPosGraduacao();
+	}
 
 	@Override
 	public boolean temEmprestimoLivro(Livro livroVerificar) {
@@ -24,24 +27,29 @@ public class AlunoPosGraduacao extends Usuario implements IAluno {
 			else
 				return false;
 	}
-	
-	@Override
-	public boolean temReservaLivro(Livro livroVerificar) {
-		if (getReservas().contains(livroVerificar))
-			return true;
-			else
-				return false;
-	}
-	
-	@Override
-	public ITipoEmprestimo getTipoEmprestimo() {
-		return new EmprestimoAlunoPosGraduacao();
-	}
 
 	@Override
 	public boolean podeFazerEmprestimo() {
-		// TODO Auto-generated method stub
+		if (qntEmprestimos < qntMAXIMAEmprestimos) {
+			return true;
+		}
 		return false;
+	}
+	
+	public int getQntEmprestimos() {
+		return qntEmprestimos;
+	}
+
+	public void setQntEmprestimos(int qntEmprestimos) {
+		this.qntEmprestimos = qntEmprestimos;
+	}
+
+	public int getQntDiasEmprestimos() {
+		return qntDiasEmprestimos;
+	}
+
+	public void setQntDiasEmprestimos(int qntDiasEmprestimos) {
+		this.qntDiasEmprestimos = qntDiasEmprestimos;
 	}
 
 	

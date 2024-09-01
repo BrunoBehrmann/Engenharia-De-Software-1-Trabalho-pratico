@@ -23,15 +23,22 @@ public class Repositorio {
 	}
 	
 	public IUsuario buscaUsuarioPorCodigo(int codigoUsuario) {
-		for (IUsuario usuarioLista: usuarios) {
+		for (IUsuario usuarioLista: this.usuarios) {
 			if (usuarioLista.getIdUsuario() == codigoUsuario) {
 				return usuarioLista;
 			}
 		}
-		System.out.println("Usuario nao encontrado");
 		return null;
-		
 	}
+	
+	/*public IAluno buscaAlunoPorCodigo(int codigoAluno) {
+		for (IUsuario usuarioLista: usuarios) {
+			if (usuarioLista.getIdUsuario() == codigoAluno) {
+				return usuarioLista;
+			}
+		}
+		return null;
+	}*/
 	
 	public Livro buscaLivroPorCodigo(int codigoLivro) {
 		for (Livro livroLista: this.livros) {
@@ -45,7 +52,7 @@ public class Repositorio {
 	}
 	
 	public boolean temExemplarDisponivel(Livro livro) {
-		if (buscaLivroRepositorio(livro).getQntExemplaresDisponiveis() > 0) {
+		if (buscaLivro(livro).getQntExemplaresDisponiveis() > 0) {
 			return true;
 		} else {
 			return false;
@@ -60,11 +67,16 @@ public class Repositorio {
 		this.usuarios.add(usuario);
 	}
 	
-	public Livro buscaLivroRepositorio(Livro livro) {
+	public Livro buscaLivro(Livro livro) {
 		for (Livro livroRepositorio: this.livros) {
 			if (livroRepositorio == livro)
 				return livroRepositorio;
 		}
 		return null;
 	}
+	
+	public Exemplar buscaExemplar(Livro livro) {
+		return livro.buscaExemplar();
+	}
+	
 }

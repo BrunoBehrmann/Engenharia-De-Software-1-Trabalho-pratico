@@ -1,9 +1,10 @@
 package lib.command;
 
+import java.time.LocalDateTime;
+
 import lib.IUsuario;
 import lib.Livro;
 import lib.ParametrosEntrada;
-//import lib.Professor;
 import lib.Repositorio;
 import lib.Reserva;
 import lib.Usuario;
@@ -18,11 +19,21 @@ public class ReservarLivroComando implements Comando {
 
 		int codigoUsuario = parametros.getCodigo1();
 		IUsuario usuario = repositorio.buscaUsuarioPorCodigo(codigoUsuario);
-
-		Reserva reserva = new Reserva(livro, usuario, null); //adicionar sistema de data e hora
-
-		livro.adicionarReserva(reserva);
-		//usuario.
+		
+		if (usuario.getQntReservas() < 3) {
+			if (!usuario.temReservaLivro(livro)) {
+				Reserva reserva = new Reserva(livro, usuario, LocalDateTime.now());
+				livro.adicionarReserva(reserva);
+				usuario.adicionarReserva(reserva);
+				usuario.setQntReservas(usuario.getQntReservas() + 1);
+				System.out.println("Sucesso! O usuario " + usuario.getNome() + " reservou o livro " + livro.getTitulo() + ".");
+			} else {
+				System.out.println("O usuario " + usuario.getNome() + " ja possui uma reserva para o livro " + livro.getTitulo() + ".");
+			}
+			
+		} else {
+			System.out.println("Não foi possível reservar o livro " + livro.getTitulo() +". O usuario " + usuario.getNome() + " já possui o limite de 3 reservas.");
+		}
 	}
 
 }

@@ -1,16 +1,32 @@
 package lib;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Reserva{
 	private Livro livro;
 	private IUsuario usuario;
-	private Date dataDevolucao;
+	private LocalDateTime dataDevolucao;
 	
-	public Reserva (Livro livro, IUsuario usuario, Date dataDevolucao) {
+	public Reserva (Livro livro, IUsuario usuario, LocalDateTime localDateTime) {
+		this.setLivro(livro);
+		this.setUsuario(usuario);
+		this.dataDevolucao = localDateTime;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
 		this.livro = livro;
+	}
+
+	public IUsuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(IUsuario usuario) {
 		this.usuario = usuario;
-		this.dataDevolucao = dataDevolucao;
 	}
 
 

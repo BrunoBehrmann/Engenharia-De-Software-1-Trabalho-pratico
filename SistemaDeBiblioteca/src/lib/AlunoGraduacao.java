@@ -29,16 +29,10 @@ public class AlunoGraduacao extends Usuario implements IAluno {
 	}
 	
 	@Override
-	public boolean temReservaLivro(Livro livroVerificar) {
-		if (getReservas().contains(livroVerificar))
-			return true;
-			else
-				return false;
-	}
-	
-	@Override
 	public boolean podeFazerEmprestimo() {
-		// TODO Auto-generated method stub
+		if (qntEmprestimos < qntMAXIMAEmprestimos) {
+			return true;
+		}
 		return false;
 	}
 	
@@ -48,6 +42,14 @@ public class AlunoGraduacao extends Usuario implements IAluno {
 
 	public void setQntEmprestimos(int qntEmprestimos) {
 		this.qntEmprestimos = qntEmprestimos;
+	}
+
+	public int getQntDiasEmprestimos() {
+		return qntDiasEmprestimos;
+	}
+
+	public void setQntDiasEmprestimos(int qntDiasEmprestimos) {
+		this.qntDiasEmprestimos = qntDiasEmprestimos;
 	}
 
 	

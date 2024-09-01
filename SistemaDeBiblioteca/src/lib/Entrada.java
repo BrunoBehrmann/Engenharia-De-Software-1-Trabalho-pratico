@@ -20,8 +20,7 @@ public class Entrada {
     }
 	
 	public void run() {
-		while (true) { // Loop contínuo
-            System.out.print("> ");
+		while (true) {
             this.stringEntrada = scanner.nextLine(); // Lê a entrada como uma string
             sistema.executarComando(pegaComandoDaEntrada(), pegaParamentrosDaEntrada());
         }

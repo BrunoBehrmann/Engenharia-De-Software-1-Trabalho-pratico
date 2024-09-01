@@ -23,14 +23,6 @@ public class Professor extends Usuario implements Observador, IProfessor {
 		return new EmprestimoProfessor();
 	}
 	
-	@Override
-	public boolean temReservaLivro(Livro livroVerificar) {
-		if (getReservas().contains(livroVerificar))
-			return true;
-		else
-			return false;
-	}
-	
 	public boolean ehObservador (Livro livro) {
 		if (livro.getObservadores().contains(this)) {
 			return true;

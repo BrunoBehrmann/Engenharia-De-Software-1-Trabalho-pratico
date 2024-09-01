@@ -13,18 +13,27 @@ public abstract class Usuario implements IUsuario {
     private boolean devedor;
     private List<Reserva> reservas;
     private List<Emprestimo> emprestimos;
-
-    // Construtor, getters e setters
     
     Usuario(int idUsuario, String nome) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.reservas = new ArrayList<>();
         this.emprestimos = new ArrayList<>();
+        
+        this.qntReservas = 0;
     }
     
     public abstract ITipoEmprestimo getTipoEmprestimo();
 
+    public boolean temReservaLivro(Livro livro) {
+    	for (Reserva reserva: this.reservas) {
+    		if (reserva.getLivro().equals(livro)) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -45,10 +54,6 @@ public abstract class Usuario implements IUsuario {
         return reservas;
     }
 
-    public int getQntReservas() {
-        return reservas.size();
-    }
-
 	public List<Emprestimo> getEmprestimos() {
 		return emprestimos;
 	}
@@ -64,6 +69,31 @@ public abstract class Usuario implements IUsuario {
 	public void setDevedor(boolean devedor) {
 		this.devedor = devedor;
 	}
+	
+	public int getQntReservas() {
+        return reservas.size();
+    }
 
+	public void setQntReservas(int qntReservas) {
+		this.qntReservas = qntReservas;
+	}
+	
+	public void adicionarReserva(Reserva reserva) {
+		this.reservas.add(reserva);
+	}
+	
+	public void removerReserva(Livro livro) {
+		for (Reserva reserva: this.reservas) {
+    		if (reserva.getLivro().equals(livro)) {
+    			this.reservas.remove(reserva);
+    			break;
+    		}
+    	}
+		
+	}
+	
+	public void adicionarEmprestimo(Emprestimo emprestimo) {
+		this.emprestimos.add(emprestimo);
+	}
 	
 }
