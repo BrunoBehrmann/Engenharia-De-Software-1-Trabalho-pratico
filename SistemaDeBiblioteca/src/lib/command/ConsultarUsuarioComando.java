@@ -50,10 +50,5 @@ public class ConsultarUsuarioComando implements Comando {
             System.out.println("Reserva: " + reserva.getDataDevolucao());
             System.out.println("\n");
          }
-
-
-
-
-		 
 	}
 }

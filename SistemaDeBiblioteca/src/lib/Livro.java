@@ -179,5 +179,4 @@ public class Livro implements ILivro, Sujeito {
 	public void setQntReservas(int qntReservas) {
 		this.qntReservas = qntReservas;
 	}
-
 }
