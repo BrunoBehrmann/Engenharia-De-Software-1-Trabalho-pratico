@@ -1,4 +1,4 @@
-package lib;
+package lib.observer;
 
 public interface Sujeito {
 	public void adicionarObservador(Observador o);

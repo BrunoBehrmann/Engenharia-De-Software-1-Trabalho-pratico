@@ -1,4 +1,4 @@
-package lib;
+package lib.console;
 
 public class ParametrosEntrada {
 	private int codigo1;

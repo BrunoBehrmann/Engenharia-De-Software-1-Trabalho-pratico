@@ -1,4 +1,4 @@
-package lib;
+package lib.console;
 
 public class Main {
 

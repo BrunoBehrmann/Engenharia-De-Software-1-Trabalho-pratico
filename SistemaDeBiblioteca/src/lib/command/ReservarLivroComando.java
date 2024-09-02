@@ -3,9 +3,9 @@ package lib.command;
 import java.time.LocalDateTime;
 
 import lib.Livro;
-import lib.ParametrosEntrada;
 import lib.Repositorio;
 import lib.Reserva;
+import lib.console.ParametrosEntrada;
 import lib.users.IUsuario;
 
 public class ReservarLivroComando implements Comando {

@@ -40,8 +40,7 @@ public abstract class Usuario implements IUsuario {
 	
 	public void adicionarReserva(Reserva reserva) {
 		this.reservas.add(reserva);
-		this.qntReservas += 1;
-		reserva.getLivro().setQntReservas(reserva.getLivro().getQntReservas() + 1);
+		setQntReservas(this.qntReservas += 1);
 	}
     
     public void removerReserva(Livro livro) {
@@ -49,7 +48,6 @@ public abstract class Usuario implements IUsuario {
     		if (reserva.getLivro().equals(livro)) {
     			this.reservas.remove(reserva);
     			this.qntReservas -= 1;
-    			reserva.getLivro().setQntReservas(reserva.getLivro().getQntReservas() - 1);
     			break;
     		}
     	}
@@ -73,6 +71,7 @@ public abstract class Usuario implements IUsuario {
 		for (Emprestimo emprestimo: this.emprestimos) {
     		if (emprestimo.getExemplar().equals(livro.buscaExemplar())) {
     			this.emprestimos.remove(emprestimo);
+    			emprestimo.setConcluido(true);
     			break;
     		}
     	}

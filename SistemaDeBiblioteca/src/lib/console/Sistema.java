@@ -1,15 +1,20 @@
-package lib;
+package lib.console;
 
 import java.util.HashMap;
 import java.util.List;
 
+import lib.BancoDeDados;
+import lib.Reserva;
 import lib.command.Comando;
 import lib.command.ConsultarLivroComando;
+import lib.command.ConsultarUsuarioComando;
+import lib.command.ConsultarVezesNotificaoReservaComando;
 import lib.command.DevolverComando;
 import lib.command.EmprestarComando;
 import lib.command.RegistrarProfessorObservadorComando;
 import lib.command.ReservarLivroComando;
 import lib.command.SairComando;
+import lib.Fabrica;
 
 public class Sistema {
 
@@ -23,14 +28,14 @@ public class Sistema {
 	}
 
 	private void initComandos() {
-		comandos.put("emp", new EmprestarComando());  // falta
-		comandos.put("dev", new DevolverComando()); // ok!
-		comandos.put("res", new ReservarLivroComando()); // ok!
-		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica
-		comandos.put("liv", new ConsultarLivroComando()); // ok
-		comandos.put("usu", new ConsultarUsuarioComando()); // ok!
-		comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta
-		comandos.put("sai", new SairComando()); // ok!
+		comandos.put("emp", Fabrica.criarEmprestarComando());  // ok!
+		comandos.put("dev", Fabrica.criarDevolverComando()); // ok!
+		comandos.put("res", Fabrica.criarReservarLivroComando()); // ok!
+		comandos.put("obs", Fabrica.criarRegistrarProfessorObservadorComando()); //ok!
+		comandos.put("liv", Fabrica.criarConsultarLivroComando()); // ok
+		comandos.put("usu", Fabrica.criarConsultarUsuarioComando()); // ok!
+		comandos.put("ntf", Fabrica.criarConsultarVezesNotificaoReservaComando()); // ok!
+		comandos.put("sai", Fabrica.criarSairComando()); // ok!
 	}
 
 	public void executarComando(String comandoString, ParametrosEntrada parametros) {

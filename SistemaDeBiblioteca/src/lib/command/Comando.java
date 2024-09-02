@@ -1,6 +1,6 @@
 package lib.command;
 
-import lib.ParametrosEntrada;
+import lib.console.ParametrosEntrada;
 
 public interface Comando {
 	public void executar(ParametrosEntrada parametros);

@@ -1,5 +1,6 @@
 package lib.users;
 
+import lib.Emprestimo;
 import lib.Livro;
 import lib.command.strategy.EmprestimoAlunoGraduacao;
 import lib.command.strategy.ITipoEmprestimo;
@@ -23,10 +24,12 @@ public class AlunoGraduacao extends Usuario implements IAluno {
 	
 	@Override
 	public boolean temEmprestimoLivro(Livro livroVerificar) {
-		if (getEmprestimos().contains(livroVerificar))
-			return true;
-			else
-				return false;
+		for (Emprestimo emprestimo: getEmprestimos()) {
+			if (emprestimo.getExemplar().getLivro() == livroVerificar) {
+				return true;
+			}
+		} 
+		return false;
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 package lib.command;
 
-import lib.ParametrosEntrada;
+import lib.console.ParametrosEntrada;
 
 public class SairComando implements Comando {
 

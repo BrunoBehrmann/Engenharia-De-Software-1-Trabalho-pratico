@@ -1,8 +1,8 @@
 package lib.command;
 
 import lib.Livro;
-import lib.ParametrosEntrada;
 import lib.Repositorio;
+import lib.console.ParametrosEntrada;
 //import lib.command.Comando;
 import lib.users.Professor;
 

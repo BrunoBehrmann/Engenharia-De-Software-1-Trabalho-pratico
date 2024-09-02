@@ -1,10 +1,11 @@
 package lib.users;
 
+import lib.Emprestimo;
 import lib.Livro;
-import lib.Observador;
-import lib.Sujeito;
 import lib.command.strategy.EmprestimoProfessor;
 import lib.command.strategy.ITipoEmprestimo;
+import lib.observer.Observador;
+import lib.observer.Sujeito;
 
 public class Professor extends Usuario implements IProfessor, Observador {
 
@@ -34,6 +35,16 @@ public class Professor extends Usuario implements IProfessor, Observador {
 	@Override
 	public ITipoEmprestimo getTipoEmprestimo() {
 		return new EmprestimoProfessor();
+	}
+	
+	@Override
+	public boolean temEmprestimoLivro(Livro livroVerificar) {
+		for (Emprestimo emprestimo: getEmprestimos()) {
+			if (emprestimo.getExemplar().getLivro() == livroVerificar) {
+				return true;
+			}
+		} 
+		return false;
 	}
 	
 	public boolean ehObservador (Livro livro) {
