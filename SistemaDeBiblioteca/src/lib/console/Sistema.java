@@ -1,10 +1,13 @@
-package lib;
+package lib.console;
 
 import java.util.HashMap;
 import java.util.List;
 
+import lib.BancoDeDados;
+import lib.Reserva;
 import lib.command.Comando;
 import lib.command.ConsultarLivroComando;
+import lib.command.ConsultarUsuarioComando;
 import lib.command.DevolverComando;
 import lib.command.EmprestarComando;
 import lib.command.RegistrarProfessorObservadorComando;
@@ -28,7 +31,7 @@ public class Sistema {
 		comandos.put("res", new ReservarLivroComando()); // ok!
 		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica
 		comandos.put("liv", new ConsultarLivroComando()); // ok
-		//comandos.put("usu", new ConsultarUsuarioComando()); // falta
+		comandos.put("usu", new ConsultarUsuarioComando()); // falta
 		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta
 		comandos.put("sai", new SairComando()); // ok!
 	}

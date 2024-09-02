@@ -1,8 +1,8 @@
 package lib.command;
 
 import lib.Livro;
-import lib.ParametrosEntrada;
 import lib.Repositorio;
+import lib.console.ParametrosEntrada;
 import lib.users.IUsuario;
 
 public class DevolverComando implements Comando {

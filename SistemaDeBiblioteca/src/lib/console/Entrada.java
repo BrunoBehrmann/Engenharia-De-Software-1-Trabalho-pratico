@@ -1,5 +1,5 @@
 //Singleton
-package lib;
+package lib.console;
 
 import java.util.Scanner;
 

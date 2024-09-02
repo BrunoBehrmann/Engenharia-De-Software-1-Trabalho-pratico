@@ -1,9 +1,9 @@
 package lib.command;
 
 import lib.Livro;
-import lib.ParametrosEntrada;
 import lib.Repositorio;
 import lib.command.strategy.ITipoEmprestimo;
+import lib.console.ParametrosEntrada;
 import lib.users.IUsuario;
 
 public class EmprestarComando implements Comando {

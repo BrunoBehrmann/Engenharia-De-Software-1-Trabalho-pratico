@@ -71,6 +71,7 @@ public abstract class Usuario implements IUsuario {
 		for (Emprestimo emprestimo: this.emprestimos) {
     		if (emprestimo.getExemplar().equals(livro.buscaExemplar())) {
     			this.emprestimos.remove(emprestimo);
+    			emprestimo.setConcluido(true);
     			break;
     		}
     	}

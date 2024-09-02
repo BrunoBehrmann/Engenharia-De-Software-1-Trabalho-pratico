@@ -4,9 +4,9 @@ import java.time.format.DateTimeFormatter;
 
 import lib.Exemplar;
 import lib.Livro;
-import lib.ParametrosEntrada;
 import lib.Repositorio;
 import lib.Reserva;
+import lib.console.ParametrosEntrada;
 import lib.users.IUsuario;
 
 public class ConsultarLivroComando implements Comando {

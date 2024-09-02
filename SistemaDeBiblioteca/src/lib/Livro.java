@@ -3,6 +3,9 @@ package lib;
 import java.util.ArrayList;
 import java.util.List;
 
+import lib.observer.Observador;
+import lib.observer.Sujeito;
+
 public class Livro implements ILivro, Sujeito {
 	private int codigo;
 	private String titulo;

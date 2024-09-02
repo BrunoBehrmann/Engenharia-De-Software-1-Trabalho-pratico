@@ -9,13 +9,15 @@ public class Emprestimo {
 	private Exemplar exemplar;
 	private LocalDateTime dataEmprestimo;
 	private LocalDateTime dataDevolucaoPrevista;
-	private boolean status;
+	private boolean concluido;
 	
 	public Emprestimo(IUsuario usuario, Exemplar exemplar, LocalDateTime dataEmprestimo, int tempoDeEmprestimo) {
 		this.setUsuario(usuario);
 		this.exemplar = exemplar;
 		this.setDataEmprestimo(dataEmprestimo);
 		this.setDataDevolucaoPrevista(dataEmprestimo.plusDays(tempoDeEmprestimo));
+		
+		this.setConcluido(false);
 	}
 	
 	public Exemplar getExemplar() {
@@ -45,12 +47,13 @@ public class Emprestimo {
 	public void setUsuario(IUsuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	public void setStatus(boolean status) {
-		this.status= status;
+
+	public boolean isConcluido() {
+		return concluido;
 	}
 
-	public boolean getStatus() {
-		return status;
+	public void setConcluido(boolean concluido) {
+		this.concluido = concluido;
 	}
+	
 }

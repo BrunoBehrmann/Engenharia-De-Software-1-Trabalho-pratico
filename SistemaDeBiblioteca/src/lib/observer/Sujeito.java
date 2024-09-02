@@ -1,7 +1,4 @@
-package lib;
-
-import java.util.Iterator;
-import java.util.List;
+package lib.observer;
 
 public interface Sujeito {
 	public void adicionarObservador(Observador o);
