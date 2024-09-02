@@ -6,22 +6,22 @@ public class Exemplar {
 	
 	private Livro livro;
 	private int codigoExemplar;
-	private boolean disponibilidade;
+	private boolean disponivel;
 	private Usuario usuarioPortador;
 	private Emprestimo emprestimo;
 	
 	public Exemplar(Livro livro, int codigoExemplar, boolean disponibilidade) {
         this.livro = livro;
         this.codigoExemplar = codigoExemplar;
-        this.disponibilidade = disponibilidade;
+        this.disponivel = disponibilidade;
     }
 	
-	public boolean isDisponibilidade() {
-		return disponibilidade;
+	public boolean isDisponivel() {
+		return disponivel;
 	}
 	
-	public void setDisponibilidade(boolean disponibilidade) {
-		this.disponibilidade = disponibilidade;
+	public void setDisponivel(boolean disponibilidade) {
+		this.disponivel = disponibilidade;
 	}
 	
 	public int getCodigoExemplar() {
@@ -45,11 +45,20 @@ public class Exemplar {
 	}
 
 	public Emprestimo getEmprestimo() {
-		return emprestimo;
+		return this.emprestimo;
 	}
 
 	public void setEmprestimo(Emprestimo emprestimo) {
 		this.emprestimo = emprestimo;
+		this.disponivel = false;
 	}
 	
+	public String getStatusDisponivel() {
+		if (isDisponivel()) {
+			return "disponivel";
+		} else {
+			return "emprestado";
+		}
+		
+	}
 }

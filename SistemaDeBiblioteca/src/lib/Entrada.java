@@ -37,8 +37,10 @@ public class Entrada {
 	public ParametrosEntrada pegaParamentrosDaEntrada() {
 		String[] partes = this.stringEntrada.split(" ");
 		ParametrosEntrada parametros = new ParametrosEntrada();
-		if (partes.length == 1) {
-			return null;
+		if (partes.length == 2) {
+			int codigo1 = Integer.parseInt(partes[1]);
+			parametros.setCodigo1(codigo1);
+			return parametros;
 		}
 		int codigo1 = Integer.parseInt(partes[1]);
         int codigo2 = Integer.parseInt(partes[2]);

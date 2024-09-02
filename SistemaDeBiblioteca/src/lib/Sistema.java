@@ -23,7 +23,7 @@ public class Sistema {
 	}
 
 	private void initComandos() {
-		comandos.put("emp", new EmprestarComando());  // falta
+		comandos.put("emp", new EmprestarComando());  // ok!
 		comandos.put("dev", new DevolverComando()); // ok!
 		comandos.put("res", new ReservarLivroComando()); // ok!
 		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica

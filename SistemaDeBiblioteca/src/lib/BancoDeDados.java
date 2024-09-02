@@ -62,8 +62,6 @@ public class BancoDeDados {
 		repositorio.adicionarLivro(l400);
 		repositorio.adicionarLivro(l401);
 		
-		
-		
 	}
 	
 }

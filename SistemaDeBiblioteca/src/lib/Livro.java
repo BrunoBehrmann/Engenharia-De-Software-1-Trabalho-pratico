@@ -96,6 +96,17 @@ public class Livro implements ILivro, Sujeito {
 		}
 	}
 	
+	public void removerReserva(Livro livro) {
+		for (Reserva reserva: this.reservas) {
+    		if (reserva.getLivro().equals(livro)) {
+    			this.reservas.remove(reserva);
+    			this.qntReservas -= 1;
+    			break;
+    		}
+    	}
+		
+	}
+	
 	public String getEdicao() {
 		return edicao;
 	}
@@ -122,6 +133,7 @@ public class Livro implements ILivro, Sujeito {
 
 	public void adicionarReserva(Reserva reserva) {
 		reservas.add(reserva);
+		setQntReservas(this.qntReservas += 1);
 	}
 	
 	public List<Observador> getObservadores() {
