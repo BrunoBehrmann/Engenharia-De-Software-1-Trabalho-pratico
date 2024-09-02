@@ -54,6 +54,8 @@ public class Professor extends Usuario implements IProfessor, Observador {
 		return false;
 	}
 
-	
+	public int getContadorNotificacoes() {
+		return contadorNotificacoes;
+	}
 	
 }

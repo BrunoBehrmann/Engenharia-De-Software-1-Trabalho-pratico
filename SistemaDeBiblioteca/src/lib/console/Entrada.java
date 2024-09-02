@@ -41,14 +41,18 @@ public class Entrada {
 			int codigo1 = Integer.parseInt(partes[1]);
 			parametros.setCodigo1(codigo1);
 			return parametros;
+		} else if (partes.length == 1) {
+			return null;
+		} else {
+			int codigo1 = Integer.parseInt(partes[1]);
+	        int codigo2 = Integer.parseInt(partes[2]);
+	        
+			parametros.setCodigo1(codigo1);
+			parametros.setCodigo2(codigo2);
+			
+			return parametros;
 		}
-		int codigo1 = Integer.parseInt(partes[1]);
-        int codigo2 = Integer.parseInt(partes[2]);
-        
-		parametros.setCodigo1(codigo1);
-		parametros.setCodigo2(codigo2);
 		
-		return parametros;
 	}
 	
 }

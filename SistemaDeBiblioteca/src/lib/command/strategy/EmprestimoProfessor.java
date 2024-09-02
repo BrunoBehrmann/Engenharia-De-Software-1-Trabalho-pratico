@@ -3,6 +3,7 @@ package lib.command.strategy;
 import java.time.LocalDateTime;
 
 import lib.Emprestimo;
+import lib.Fabrica;
 import lib.Livro;
 import lib.Repositorio;
 import lib.users.IUsuario;
@@ -19,9 +20,8 @@ public class EmprestimoProfessor implements ITipoEmprestimo {
 			if (repositorio.temExemplarDisponivel(livro)) {
 				if (!usuario.isDevedor()) {
 					
-					Emprestimo emp = new Emprestimo(usuario, livro.buscaExemplar(), LocalDateTime.now(), 7);
-					livro.buscaExemplarDisponivel().setEmprestimo(emp);
-					livro.setQntExemplaresDisponiveis(livro.getQntExemplaresDisponiveis() - 1);
+					Emprestimo emp = Fabrica.criarEmprestimo(usuario, livro.buscaExemplar(), LocalDateTime.now(), 7);
+					livro.buscaExemplar().setEmprestimo(emp);
 					usuario.adicionarEmprestimo(emp);
 					livro.removerReserva(livro, usuario);
 					usuario.removerReserva(livro);

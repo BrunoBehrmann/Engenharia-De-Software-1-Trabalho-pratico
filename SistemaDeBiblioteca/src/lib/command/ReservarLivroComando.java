@@ -7,7 +7,6 @@ import lib.Repositorio;
 import lib.Reserva;
 import lib.console.ParametrosEntrada;
 import lib.users.IUsuario;
-import lib.users.Usuario;
 
 public class ReservarLivroComando implements Comando {
 
@@ -25,6 +24,12 @@ public class ReservarLivroComando implements Comando {
 				Reserva reserva = new Reserva(livro, usuario, LocalDateTime.now());
 				livro.adicionarReserva(reserva);
 				usuario.adicionarReserva(reserva);
+
+				//lógica p/ observador
+				if (livro.getQntReservas() >= 2) {
+					livro.notificarObservadores();
+				}
+
 				System.out.println("Sucesso! O usuario " + usuario.getNome() + " reservou o livro " + livro.getTitulo() + ".");
 			} else {
 				System.out.println("O usuario " + usuario.getNome() + " ja possui uma reserva para o livro " + livro.getTitulo() + ".");
@@ -34,5 +39,5 @@ public class ReservarLivroComando implements Comando {
 			System.out.println("Não foi possível reservar o livro " + livro.getTitulo() +". O usuario " + usuario.getNome() + " já possui o limite de 3 reservas.");
 		}
 	}
-
 }
+
