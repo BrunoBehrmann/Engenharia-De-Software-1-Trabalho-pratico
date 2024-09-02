@@ -17,6 +17,7 @@ public class DevolverComando implements Comando {
 		
 		if (usuario.temEmprestimoLivro(livro)) {
 			usuario.removerEmprestimo(livro);
+			repositorio.adicionarLivro(livro);
 			System.out.println("Sucesso! O usuario " + usuario.getNome() + " devolveu o livro " + livro.getTitulo() + ".");
 		} else {
 			System.out.println("O usuario " + usuario.getNome() + " não possui emprestimo em aberto para o livro " + livro.getTitulo() + ".");

@@ -20,9 +20,10 @@ public class EmprestimoProfessor implements ITipoEmprestimo {
 				if (!usuario.isDevedor()) {
 					
 					Emprestimo emp = new Emprestimo(usuario, livro.buscaExemplar(), LocalDateTime.now(), 7);
-					livro.buscaExemplar().setEmprestimo(emp);
+					livro.buscaExemplarDisponivel().setEmprestimo(emp);
+					livro.setQntExemplaresDisponiveis(livro.getQntExemplaresDisponiveis() - 1);
 					usuario.adicionarEmprestimo(emp);
-					livro.removerReserva(livro);
+					livro.removerReserva(livro, usuario);
 					usuario.removerReserva(livro);
 					System.out.println("Sucesso! O livro " + livro.getTitulo() + " foi emprestado para o professor " + usuario.getNome() + ".");
 					
@@ -31,7 +32,7 @@ public class EmprestimoProfessor implements ITipoEmprestimo {
 					System.out.println("Não foi possível emprestar o livro " + livro.getTitulo() + ". O professor " + usuario.getNome() + " é devedor de livro.");
 				}
 			} else {
-				System.out.println("Não foi possível emprestar o livro " + livro.getTitulo() + ". Não há exemplares disponíveis para o livro " + livro.getTitulo() + ".");
+				System.out.println("Não foi possível emprestar o livro " + livro.getTitulo() + ", não há exemplares disponíveis.");
 			}
 		} else {
 			System.out.println("Não foi possível emprestar o livro " + livro.getTitulo() + ". O professor " + usuario.getNome() + " não tem uma reserva para o livro " + livro.getTitulo() + ".");

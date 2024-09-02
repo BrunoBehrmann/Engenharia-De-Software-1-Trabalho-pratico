@@ -21,7 +21,7 @@ public class Emprestimo {
 	}
 	
 	public Exemplar getExemplar() {
-		return exemplar;
+		return this.exemplar;
 	}
 
 	public LocalDateTime getDataEmprestimo() {

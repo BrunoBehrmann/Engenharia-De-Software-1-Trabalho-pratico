@@ -69,8 +69,10 @@ public abstract class Usuario implements IUsuario {
 	
 	public void removerEmprestimo(Livro livro) {
 		for (Emprestimo emprestimo: this.emprestimos) {
-    		if (emprestimo.getExemplar().equals(livro.buscaExemplar())) {
+    		if (emprestimo.getExemplar() == livro.buscaExemplarPorCodigo(emprestimo.getExemplar().getCodigoExemplar())) {
+    			emprestimo.getExemplar().setDisponivel(true);
     			this.emprestimos.remove(emprestimo);
+    			livro.setQntExemplaresDisponiveis(livro.getQntExemplaresDisponiveis() + 1);
     			emprestimo.setConcluido(true);
     			break;
     		}

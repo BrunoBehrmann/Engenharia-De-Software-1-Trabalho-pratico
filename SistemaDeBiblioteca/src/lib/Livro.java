@@ -5,6 +5,7 @@ import java.util.List;
 
 import lib.observer.Observador;
 import lib.observer.Sujeito;
+import lib.users.IUsuario;
 
 public class Livro implements ILivro, Sujeito {
 	private int codigo;
@@ -99,9 +100,9 @@ public class Livro implements ILivro, Sujeito {
 		}
 	}
 	
-	public void removerReserva(Livro livro) {
+	public void removerReserva(Livro livro, IUsuario usuario) {
 		for (Reserva reserva: this.reservas) {
-    		if (reserva.getLivro().equals(livro)) {
+    		if (reserva.getLivro().equals(livro) && reserva.getUsuario().equals(usuario)) {
     			this.reservas.remove(reserva);
     			this.qntReservas -= 1;
     			break;
@@ -178,9 +179,27 @@ public class Livro implements ILivro, Sujeito {
 		this.qntExemplaresDisponiveis -= 1;
 	}
 	
+	public Exemplar buscaExemplarPorCodigo(int codigoExemplar) {
+		for(Exemplar exemplar: this.exemplares) {
+			if(exemplar.getCodigoExemplar() == codigoExemplar) {
+				return exemplar;
+			}
+		}
+		return null;
+	}
+	
 	public Exemplar buscaExemplar() {
 		for(Exemplar exemplar: this.exemplares) {
 			if(exemplar.getLivro().equals(this)) {
+				return exemplar;
+			}
+		}
+		return null;
+	}
+	
+	public Exemplar buscaExemplarDisponivel() {
+		for(Exemplar exemplar: this.exemplares) {
+			if(exemplar.isDisponivel()) {
 				return exemplar;
 			}
 		}

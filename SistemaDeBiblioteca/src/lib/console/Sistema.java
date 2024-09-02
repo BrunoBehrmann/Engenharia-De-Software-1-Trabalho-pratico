@@ -17,7 +17,7 @@ import lib.command.SairComando;
 public class Sistema {
 
 	private HashMap<String, Comando> comandos = new HashMap<String, Comando>();
-	private List<Reserva> registros;
+	//private List<Reserva> registros;
 
 	public Sistema() {
 		this.initComandos();
@@ -31,7 +31,7 @@ public class Sistema {
 		comandos.put("res", new ReservarLivroComando()); // ok!
 		comandos.put("obs", new RegistrarProfessorObservadorComando()); // implementar logica
 		comandos.put("liv", new ConsultarLivroComando()); // ok
-		comandos.put("usu", new ConsultarUsuarioComando()); // falta
+		comandos.put("usu", new ConsultarUsuarioComando()); // ok!
 		//comandos.put("ntf", new ConsultarVezesNotificaoReservaComando()); // falta
 		comandos.put("sai", new SairComando()); // ok!
 	}

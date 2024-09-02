@@ -10,10 +10,10 @@ public class Exemplar {
 	private Usuario usuarioPortador;
 	private Emprestimo emprestimo;
 	
-	public Exemplar(Livro livro, int codigoExemplar, boolean disponibilidade) {
+	public Exemplar(Livro livro, int codigoExemplar, boolean disponivel) {
         this.livro = livro;
         this.codigoExemplar = codigoExemplar;
-        this.disponivel = disponibilidade;
+        this.disponivel = disponivel;
     }
 	
 	public boolean isDisponivel() {
@@ -61,4 +61,5 @@ public class Exemplar {
 		}
 		
 	}
+	
 }

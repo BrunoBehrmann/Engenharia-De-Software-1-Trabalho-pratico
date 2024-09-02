@@ -34,15 +34,6 @@ public class Repositorio {
 		return null;
 	}
 	
-	/*public IAluno buscaAlunoPorCodigo(int codigoAluno) {
-		for (IUsuario usuarioLista: usuarios) {
-			if (usuarioLista.getIdUsuario() == codigoAluno) {
-				return usuarioLista;
-			}
-		}
-		return null;
-	}*/
-	
 	public Livro buscaLivroPorCodigo(int codigoLivro) {
 		for (Livro livroLista: this.livros) {
 			if (livroLista.getCodigoBiblioteca() == codigoLivro) {
