@@ -31,5 +31,9 @@ public class Reserva{
 		this.usuario = usuario;
 	}
 
+	//public void setDataDevolucao()
 
+	public LocalDateTime getDataDevolucao() {
+		return dataDevolucao;
+	}
 }

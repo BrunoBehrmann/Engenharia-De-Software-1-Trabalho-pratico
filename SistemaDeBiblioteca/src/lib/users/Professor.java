@@ -10,7 +10,7 @@ import lib.command.strategy.ITipoEmprestimo;
 public class Professor extends Usuario implements IProfessor, Observador {
 
 	private int qntDiasEmprestimo = 7;
-	// contador notificacoes
+	private int contadorNotificacoes;
 	
 	public Professor(int idUsuario, String nome) {
 		super(idUsuario, nome);

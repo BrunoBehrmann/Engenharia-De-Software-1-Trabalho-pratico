@@ -1,7 +1,6 @@
 package lib;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import lib.users.IUsuario;
 
@@ -10,6 +9,7 @@ public class Emprestimo {
 	private Exemplar exemplar;
 	private LocalDateTime dataEmprestimo;
 	private LocalDateTime dataDevolucaoPrevista;
+	private boolean status;
 	
 	public Emprestimo(IUsuario usuario, Exemplar exemplar, LocalDateTime dataEmprestimo, int tempoDeEmprestimo) {
 		this.setUsuario(usuario);
@@ -23,7 +23,7 @@ public class Emprestimo {
 	}
 
 	public LocalDateTime getDataEmprestimo() {
-		return dataEmprestimo;
+		return this.dataEmprestimo;
 	}
 
 	public void setDataEmprestimo(LocalDateTime dataEmprestimo) {
@@ -31,7 +31,7 @@ public class Emprestimo {
 	}
 
 	public LocalDateTime getDataDevolucaoPrevista() {
-		return dataDevolucaoPrevista;
+		return this.dataDevolucaoPrevista;
 	}
 
 	public void setDataDevolucaoPrevista(LocalDateTime dataDevolucaoPrevista) {
@@ -46,4 +46,11 @@ public class Emprestimo {
 		this.usuario = usuario;
 	}
 	
+	public void setStatus(boolean status) {
+		this.status= status;
+	}
+
+	public boolean getStatus() {
+		return status;
+	}
 }
