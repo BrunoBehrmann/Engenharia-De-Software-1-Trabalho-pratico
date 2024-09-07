@@ -2,9 +2,9 @@
 MATA62 – ENGENHARIA DE SOFTWARE I
 
 ## 1. Sistema de Biblioteca
-* SEMESTRE:   2024.1
-* DOCENTE:    Claudio Nogueira Santana
-* DISCENTES: Bruno de Sousa Behrmann
+* SEMESTRE: 2024.1
+* DOCENTE: Claudio Nogueira Santana
+* DISCENTE: Bruno de Sousa Behrmann
 
 ## Para fins de organização
 
