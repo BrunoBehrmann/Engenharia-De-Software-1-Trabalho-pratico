@@ -1,5 +1,7 @@
 # Engenharia-De-Software-1-Trabalho-Prático
 
+**Instituto de Computação (IC)**  
+**Departamento de Ciência da Computação (DCC)**  
 **MATA62 – Engenharia de Software I**  
 **Semestre:** 2024.1  
 **Docente:** Claudio Nogueira Santana  
